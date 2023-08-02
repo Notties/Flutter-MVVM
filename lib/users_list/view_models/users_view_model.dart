@@ -43,26 +43,7 @@ class UsersViewModel extends ChangeNotifier {
   addUser() async {
     if (isValid()) {
       _userListModel.add(addingUser);
-      _addingUser = UserModel(
-        id: 0,
-        name: '',
-        username: '',
-        email: '',
-        address: Address(
-          street: '',
-          suite: '',
-          city: '',
-          zipcode: '',
-          geo: Geo(lat: '', lng: ''),
-        ),
-        phone: '',
-        website: '',
-        company: Company(
-          name: '',
-          catchPhrase: '',
-          bs: '',
-        ),
-      );
+      _addingUser = defaultUser;
       notifyListeners();
       return true;
     }
